@@ -1,5 +1,5 @@
 /**
- * @fileoverview Server configuration file
+ * @fileoverview Server startup file
  */
 var app = require('express')(),
     bodyParser = require('body-parser'),
@@ -11,8 +11,7 @@ var app = require('express')(),
     mongoDbConfig = require("./Config/mongoConfig"),
     winston = require("./Config/winstonConfig"),
     auth = require('./Routers/auth'),
-    todo = require('./Routers/todo'),
-    user = require('./Routers/user');
+    todo = require('./Routers/todo');
 
 //Middlewares
 app.use(cors());
@@ -30,7 +29,6 @@ app.use(bodyParser.urlencoded({extended:true}));
 //Routes
 app.use('/api/auth', auth);
 app.use('/api/todo', todo);
-app.use('/api/user', user);
 
 app.use(function(err, req, res, next) {
     console.log(err)
@@ -41,4 +39,4 @@ app.use("*", (req,res)=> {
     res.status(404).json("The route you requested has not been found");
 });
 
-app.listen(serverPortConfiguration.port,serverPortConfiguration.host,()=> console.log(`%s Sicarii running on ${serverPortConfiguration.port}`, chalk.green('✓')));
+app.listen(serverPortConfiguration.port,serverPortConfiguration.host,()=> console.log(`%s Todo demo running on ${serverPortConfiguration.port}`, chalk.green('✓')));

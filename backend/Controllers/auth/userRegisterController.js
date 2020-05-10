@@ -25,7 +25,7 @@ exports.userRegister = (req, res) => {
                         {
                             firstName: req.body.firstName,
                             lastName: req.body.lastName,
-                            userId: generateId.generateUserId(),
+                            userId: generateId(8),
                             email: req.body.email,
                             profilePic: "4",
                             password: passwordValidator.generatePasswordHash(

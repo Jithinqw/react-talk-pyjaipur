@@ -43,7 +43,7 @@ exports.verifyJWT = (req, res, next) => {
         if (err) {
             return res.status(400).json(err);
         } else {
-            blacklistedJWTModel.findOne({ where: {token: token }}).then((blackToken)=> {
+            blacklistedJWTModel.findOne({ where: {invalidToken: token }}).then((blackToken)=> {
                 if(blackToken) {
                     res.status(401).json("You are using a invalid token");
                 } else {
@@ -131,7 +131,7 @@ const verifiedTokenPromise = token =>
 var blacklistedJWT = token =>
     new Promise((resolve, reject) => {
         blacklistedJWTModel.find(
-            { blacklistedJWT: token },
+            { invalidToken: token },
             (error, usedTokens) => {
                 if (error) {
                     reject(error)

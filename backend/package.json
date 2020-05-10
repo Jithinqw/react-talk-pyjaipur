@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "app-root-path": "^3.0.0",
+    "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "cerberus-validator": "^0.11.0",
     "chalk": "^4.0.0",
@@ -17,9 +18,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^3.22.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.13",
     "morgan": "^1.10.0",
-    "uuid": "^8.0.0",
     "winston": "^3.2.1"
   }
 }

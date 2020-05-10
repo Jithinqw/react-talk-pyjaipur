@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ProtectedRoute from './guards/guards';
+import { Route, Router, Switch } from 'react-router-dom';
+
+import Register from './Components/Register/Register';
+import Login from './Components/Login/Login';
+import Dashboard from './Components/Dashboard/Dashboard';
+import NotFound from './Components/NotFound/NotFound';
+import history from './history';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+      <Router history ={ history }>
+        <Switch>
+          <Route path={"/register"} component={ Register }></Route>
+          <Route path="/login" component={ Login }></Route>
+          <ProtectedRoute path="/dashboard" component={ Dashboard }></ProtectedRoute>
+          <Route path="*" component={ NotFound }></Route>
+        </Switch>
+      </Router>
+      </div>
     </div>
   );
 }

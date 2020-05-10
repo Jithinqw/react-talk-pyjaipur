@@ -2,18 +2,12 @@
  * @fileoverview This exports can generate Ids for you
  */
 
-var uuid = require('uuid/v4')
-
-/**
- * @exports generateId
- * @desc This function will generate a crypographically
- * strong user-id for a user
- * @return {String}
- */
-exports.generateUserId = () => {
-    return uuid()
-}
-
-exports.generateNoteID = () => {
-    return uuid()
-}
+module.exports = function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+ }

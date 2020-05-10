@@ -10,4 +10,4 @@ Slides are available in `slides` folder.
 
 Please refer to the `README.md` files for each project to run demos.
 
-- For redux demo Please refer to this link [here](https://github.com/Jithinqw/redux-demo)
+- For redux demo Please refer to this link [here](https://github.com/Jithinqw/redux-demo).

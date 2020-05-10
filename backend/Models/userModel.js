@@ -13,7 +13,7 @@ var userSchema = new mongoose.Schema({
         min: [3, "Invalid firstname passed"],
         validate: {
             validator: (firstName)=> {
-                if(firstName.lenght > 3) {
+                if(firstName.length > 3) {
                     return true;
                 } else {
                     return false;
@@ -28,7 +28,7 @@ var userSchema = new mongoose.Schema({
         min: [3, "Invalid lastname passed"],
         validate: {
             validator: (lastName)=> {
-                if(lastName.lenght > 3) {
+                if(lastName.length > 3) {
                     return true;
                 } else {
                     return false;
