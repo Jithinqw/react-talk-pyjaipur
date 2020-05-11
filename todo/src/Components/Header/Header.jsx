@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import history from '../../history';
+import { removeToken } from '../../Utils/tokenSetter';
 
 export default class Header extends React.Component {
     constructor(props) {
@@ -14,6 +15,11 @@ export default class Header extends React.Component {
         if(history.location.pathname === "/dashboard") {
             this.setState({loggedIn: true});
         }
+    }
+    
+    logout = () => {
+        removeToken('token');
+        history.push('/login');
     }
 
     renderRegister() {
@@ -46,7 +52,7 @@ export default class Header extends React.Component {
                         this.renderLogin()
                     }
                     {
-                        this.state.loggedIn ? <Nav.Link href="#">Logout</Nav.Link> : null
+                        this.state.loggedIn ? <Nav.Link href="#" onClick={()=>this.logout()}>Logout</Nav.Link> : null
                     }
                 </Nav>
             </Navbar>

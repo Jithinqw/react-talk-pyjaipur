@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../Header/Header';
+import PasswordStrengthCal from '../../Utils/passwordStrengthCal';
 import history from '../../history';
 import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
 import './Register.css';
@@ -126,6 +127,7 @@ export default class Register extends React.Component {
                                         <Form.Label>Password</Form.Label>
                                         <Form.Control type="password" required placeholder="Enter your Password" name="password" onChange={this.change}></Form.Control>
                                         <span className="error-str">{this.state.errors.password}</span>
+                                        <PasswordStrengthCal password={this.state.password}/>
                                     </Form.Group>
                                     <Form.Group controlId="confirmPassword">
                                         <Form.Label>Confirm Password</Form.Label>

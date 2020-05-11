@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Header/Header';
 import history from '../../history';
+import { setToken } from '../../Utils/tokenSetter';
 import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
 import './Login.css';
 
@@ -44,7 +45,7 @@ export default class Login extends React.Component {
 
     signIn = (e) => {
         if(e.currentTarget.checkValidity() === true) {
-            fetch('http://localhost:3000/api/auth/login', {
+            fetch('http://localhost:4000/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -56,6 +57,7 @@ export default class Login extends React.Component {
             }).then(res=> {
                 if(res.status === 200) {
                     res.json().then(res=> {
+                        setToken('token', res.token);
                         history.push('/dashboard');
                     })
                 } else {

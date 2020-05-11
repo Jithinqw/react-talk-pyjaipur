@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import ProtectedRoute from './guards/guards';
 import { Route, Router, Switch } from 'react-router-dom';
 
