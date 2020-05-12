@@ -1,4 +1,4 @@
-var userModel = require('../../Models/userModel'),
+const userModel = require('../../Models/userModel'),
     generateId = require('../../Helpers/generateId'),
     passwordValidator = require('../../Helpers/passwordValidations'),
     validator = require('cerberus-validator');

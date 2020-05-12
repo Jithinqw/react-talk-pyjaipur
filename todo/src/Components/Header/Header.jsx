@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import history from '../../history';
-import { removeToken } from '../../Utils/tokenSetter';
+import { removeToken } from '../../Utils/tokenUtil';
 
 export default class Header extends React.Component {
     constructor(props) {

@@ -17,7 +17,7 @@ exports.createTodo = (req, res)=>{
         userPayload = JWTCertifier.getTokenPayload(req);
         if(userPayload){
             todoModel.create({
-                todoId: generateId.generateUserId(),
+                todoId: generateId(8),
                 todoTitle: req.body.todoTitle,
                 status: 'pending'
             }, (err, todo)=>{

@@ -1,15 +1,16 @@
 /**
  * @fileoverview Express router for todo
  */
-const router = require('express').Router();
-const todoAddController = require('../Controllers/todo/createTodoController');
-// const todoDeleteController = require('../Controllers/todo/deleteController');
-// const todoUpdateController = require('../Controllers/todo/changeTodoStatusController');
-// const todoGetController = require('../Controllers/todo/getTodoContoller');
+const router = require('express').Router(),
+    JWTCertifier = require('../Helpers/JWTCertifier'),
+    todoAddController = require('../Controllers/todo/createTodoController'),
+    getAllTodoController = require('../Controllers/todo/getTodoController'),
+    updateTodoController = require('../Controllers/todo/updateStatusController'),
+    deleteTodoController = require('../Controllers/todo/deleteStatusController');
 
-router.post('/new', todoAddController.createTodo);
-// router.get('/todo/:id', todoGetController);
-// router.delete('/todo/delete/:id', todoDeleteController);
-// router.put('/todo/:id', todoUpdateController);
+router.post('/create', JWTCertifier.verifyJWT, todoAddController.createTodo);
+router.get('/all', JWTCertifier.verifyJWT, getAllTodoController.getAllTodos);
+router.put('/update', JWTCertifier.verifyJWT, updateTodoController.updateTodoStatus);
+router.delete('/delete/:todoId', JWTCertifier.verifyJWT, deleteTodoController.deleteTodo);
 
 module.exports = router;

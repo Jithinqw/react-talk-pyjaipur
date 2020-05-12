@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header/Header';
 import history from '../../history';
-import { setToken } from '../../Utils/tokenSetter';
+import { setToken } from '../../Utils/tokenUtil';
 import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
 import './Login.css';
 

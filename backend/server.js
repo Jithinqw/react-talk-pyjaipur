@@ -31,7 +31,6 @@ app.use('/api/auth', auth);
 app.use('/api/todo', todo);
 
 app.use(function(err, req, res, next) {
-    console.log(err)
     return res.status(500).send({ error: err });
 });
 
