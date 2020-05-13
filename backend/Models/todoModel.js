@@ -13,11 +13,10 @@ var todoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    createdBy:[{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: userModel,
+    createdBy:{
+        type: String,
         required: true
-    }],
+    },
     status: {
         type: String,
         required: true,

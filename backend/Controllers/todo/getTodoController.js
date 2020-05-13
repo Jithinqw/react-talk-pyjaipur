@@ -17,7 +17,7 @@ exports.getAllTodos = async (req, res) => {
                 res.status(400).json(err);
             } else {
                 todoModel.find({
-                    _id:  user._id
+                    createdBy:  user[0].userId
                   }, (error, data)=>{
                       if(error) {
                           res.status(400).json(err);
