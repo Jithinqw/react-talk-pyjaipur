@@ -35,11 +35,14 @@ export default class Dashboard extends React.Component {
                     console.log(res)
                     this.setState({todoData: [...this.state.todoData, res]});
                 })
+                console.log(this.state.todoData)
             } if(res.status === 204) {
                 this.setState({error: 'No todo found'});
+            } else {
+                this.setState({error: res.statusText});
             }
         }).catch(err=>{
-            console.log(err);
+            this.setState({error: err});
         })
     }
 
@@ -62,11 +65,11 @@ export default class Dashboard extends React.Component {
         }).then(res=>{
             if(res.status === 201) {
                 res.json().then(res=>{
-                    console.log(res);
+                    this.getAllTodo();
                 })
             }
         }).catch(error=> {
-            console.log(error);
+            this.setState({error: error});
         })
     }
 
@@ -87,7 +90,11 @@ export default class Dashboard extends React.Component {
                         <Col xs={8}>
                             <Tabs defaultActiveKey="All" id="main-tab">
                                 <Tab eventKey="All" title="All">
-                                    <p>sdfsdf</p>
+                                    {
+                                        (this.state.todoData && this.state.todoData.length) ? this.state.todoData.map((item, index)=> {
+                                            return <span key={item.todoId}>{item.todoTitle}</span>
+                                        }) : <span>No item found</span>
+                                    }
                                 </Tab>
                                 <Tab eventKey="Pending" title="Pending">
                                     <Pending pendingData={
@@ -98,7 +105,7 @@ export default class Dashboard extends React.Component {
                                     />
                                 </Tab>
                                 <Tab eventKey="Completed" title="Completed">
-                                    <Completed compleatedData= {
+                                    <Completed completeData = {
                                         this.state.todoData.filter((item)=>{
                                             return item.status === 'completed';
                                         })
