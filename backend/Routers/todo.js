@@ -6,7 +6,7 @@ const router = require('express').Router(),
     todoAddController = require('../Controllers/todo/createTodoController'),
     getAllTodoController = require('../Controllers/todo/getTodoController'),
     updateTodoController = require('../Controllers/todo/updateStatusController'),
-    deleteTodoController = require('../Controllers/todo/deleteStatusController');
+    deleteTodoController = require('../Controllers/todo/deleteTodoController');
 
 router.post('/create', JWTCertifier.verifyJWT, todoAddController.createTodo);
 router.get('/all', JWTCertifier.verifyJWT, getAllTodoController.getAllTodos);

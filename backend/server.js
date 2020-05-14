@@ -22,7 +22,7 @@ app.use(compression());
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.hidePoweredBy({setTo:"PHP 4.2.2"}));
-// app.use(require("morgan")("combined", {stream: winston.stream}));
+app.use(require("morgan")("combined", {stream: winston.stream}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 

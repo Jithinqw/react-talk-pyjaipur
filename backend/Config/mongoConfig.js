@@ -1,9 +1,9 @@
 /**
 * @fileoverview mongoDB configuration
 */
-var mongoose = require("mongoose");
-var chalk = require("chalk");
-const MONGOURL = "mongodb://127.0.0.1/tododemo";
+const mongoose = require("mongoose"),
+    chalk = require("chalk");
+    MONGOURL = "mongodb://127.0.0.1/tododemo";
 
 function Connection(){
   mongoose.connect(MONGOURL,{

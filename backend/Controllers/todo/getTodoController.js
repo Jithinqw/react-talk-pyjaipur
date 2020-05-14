@@ -2,9 +2,9 @@
  * @fileoverview Controller for getting the todos
  */
 
-const todoModel = require('../../Models/todoModel');
-const userModel = require('../../Models/userModel');
-const JWTCertifier = require('../../Helpers/JWTCertifier');
+const todoModel = require('../../Models/todoModel'),
+    userModel = require('../../Models/userModel'),
+    JWTCertifier = require('../../Helpers/JWTCertifier');
 
 /**
  * @exports getAllTodos

@@ -15,7 +15,6 @@ exports.createTodo = async (req, res)=>{
         res.status(422).json('Invalid number of parameters');
     }else{
         const userPayload = await JWTCertifier.getTokenPayload(req);
-        console.log(userPayload)
         if(userPayload){
             todoModel.create({
                 todoId: generateId(8),

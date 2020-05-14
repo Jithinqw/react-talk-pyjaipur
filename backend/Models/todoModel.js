@@ -1,8 +1,7 @@
 /**
  * @fileoverview Mongoose model for todo
  */
-var mongoose = require('mongoose');
-var userModel = require('./userModel');
+const mongoose = require('mongoose');
 
 var todoSchema = new mongoose.Schema({
     todoId: {
