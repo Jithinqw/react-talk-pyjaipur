@@ -5,6 +5,7 @@ Talk about React fundamentals.
 ## Slides
 
 Slides are available in `slides` folder.
+Currently under development, once done it will be available in `Keynote, PDF and PPT` format. 
 
 ## Running
 
@@ -22,10 +23,6 @@ Slides are available in `slides` folder.
 
 - If you have any CORS issues, one fix is to add `"proxy":"http://localhost:3000/"` in your `package.json`, and try re-running your app.
 - Under development.
-
-### Slides
-
-Currently under development, once done it will be available in `Keynote, PDF and PPT` format. 
 
 ## Redux Demo
 
