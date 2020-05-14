@@ -6,23 +6,17 @@ Talk about React fundamentals.
 
 Slides are available in `slides` folder.
 
-## Demo
-
-Please refer to the `README.md` files for each project to run demos.
-
-- For redux demo Please refer to this link [here](https://github.com/Jithinqw/redux-demo).
-
 ## Running
 
 ### Backend 
-- Written in NodeJs v12.0.0. 
+- Written on NodeJs v12.0.0. 
 - Please install MongoDB. Please follow instructions [here](https://docs.mongodb.com/manual/installation/).
 - All the configurations are written in `/Config` folder.
 - Please install dependencies using `npm install or npm i`.
 - Start your node server using `npm start or node server.js` on the root of the project.
 
 ### React App
-- Written in React v16.3.
+- Written on React v16.3.
 - Install your dependencies using `npm install or npm i`.
 - Start your development server using `npm start`. This should open your browser on `http://localhost:3000/`
 
@@ -32,3 +26,7 @@ Please refer to the `README.md` files for each project to run demos.
 ### Slides
 
 Currently under development, once done it will be available in `Keynote, PDF and PPT` format. 
+
+## Redux Demo
+
+- For redux demo Please refer to this link [here](https://github.com/Jithinqw/redux-demo).
