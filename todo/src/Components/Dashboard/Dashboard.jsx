@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header/Header';
 import './Dashboard.css';
-import { Container, Row, Col, Tab, Tabs, InputGroup, FormControl, Button } from 'react-bootstrap';
+import { Container, Row, Col, Tab, Tabs, InputGroup, FormControl, Button, ListGroup } from 'react-bootstrap';
 import Pending from './pending';
 import Completed from './Completed';
 
@@ -33,7 +33,7 @@ export default class Dashboard extends React.Component {
             if(res.status === 200) {
                 res.json().then(res=>{
                     console.log(res)
-                    this.setState({todoData: [...this.state.todoData, res]});
+                    this.setState({todoData: res});
                 })
                 console.log(this.state.todoData)
             } if(res.status === 204) {
@@ -90,11 +90,15 @@ export default class Dashboard extends React.Component {
                         <Col xs={8}>
                             <Tabs defaultActiveKey="All" id="main-tab">
                                 <Tab eventKey="All" title="All">
+                                    <ListGroup>
                                     {
                                         (this.state.todoData && this.state.todoData.length) ? this.state.todoData.map((item, index)=> {
-                                            return <span key={item.todoId}>{item.todoTitle}</span>
+                                            return <ListGroup.Item key={item.todoId}>
+                                                        {item.todoTitle}
+                                                </ListGroup.Item>
                                         }) : <span>No item found</span>
                                     }
+                                    </ListGroup>
                                 </Tab>
                                 <Tab eventKey="Pending" title="Pending">
                                     <Pending pendingData={

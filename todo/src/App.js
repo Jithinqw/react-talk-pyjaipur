@@ -8,6 +8,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import NotFound from './Components/NotFound/NotFound';
 import history from './history';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
 function App() {
   return (
