@@ -6,3 +6,12 @@
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+.icon {
+    float: right;
+    cursor: pointer;
+}
+
+.iconSpacer {
+    margin-right: 40px;
+}
