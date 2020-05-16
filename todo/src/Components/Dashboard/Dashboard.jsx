@@ -106,7 +106,9 @@ export default class Dashboard extends React.Component {
                                     {
                                         (this.state.todoData && this.state.todoData.length) ? this.state.todoData.map((item, index)=> {
                                             return <ListGroup.Item key={item.todoId}>
-                                                        {item.todoTitle}
+                                                        {
+                                                            item.status === 'completed' ? <strike>{item.todoTitle}</strike> : item.todoTitle
+                                                        }
                                                 </ListGroup.Item>
                                         }) : <span>No item found</span>
                                     }
