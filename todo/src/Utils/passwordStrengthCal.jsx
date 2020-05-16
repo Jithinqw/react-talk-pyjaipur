@@ -7,7 +7,7 @@ export default class PasswordStrengthCal extends React.Component {
         const { password } = this.props;
         const testedResult = zxcvbn(password);
         return(
-            <div>
+            <div className="progress-spacer" style={{paddingTop: "5px"}}>
                 <ProgressBar variant="success" animated min={0} max={4} now={testedResult.score}/>
             </div>
         )

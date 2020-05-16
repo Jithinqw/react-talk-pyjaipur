@@ -17,7 +17,7 @@ export default class Pending extends React.Component {
         }).then(res=> {
             if(res.status === 201) {
                 res.json().then(res=> {
-                    console.log(res);
+                    this.props.parentCallBack(todoId);
                 })
             } else {
                 console.log(res);
