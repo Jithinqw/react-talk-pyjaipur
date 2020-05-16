@@ -18,12 +18,12 @@ Currently under development, once done it will be available in `Keynote, PDF and
 - Start your node server using `npm start or node server.js` on the root of the project.
 
 ### React App
+
 - Written on React v16.3.
 - Install your dependencies using `npm install or npm i`.
 - Start your development server using `npm start`. This should open your browser on `http://localhost:3000/`
 
 - If you have any CORS issues, one fix is to add `"proxy":"http://localhost:3000/"` in your `package.json`, and try re-running your app.
-- Under development.
 
 ## [Redux](https://redux.js.org/) Demo
 

@@ -20,6 +20,8 @@ You will also see any lint errors in the console.
 - React Boostrap - Styling and Layout
 - Dropbox zxcvb - Password strength checking
 - ESLint-React - Linting and type-checking
+- Error Boundaries - Native JSX
+- Font Awesome - Icons
 
 ### `npm run build`
 

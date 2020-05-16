@@ -73,6 +73,10 @@ export default class Dashboard extends React.Component {
         })
     }
 
+    childDataFun = (childData) =>{
+        this.getAllTodo();
+    }
+
     render() {
         return(
             <div>
@@ -106,14 +110,17 @@ export default class Dashboard extends React.Component {
                                                 return data.status === 'pending';
                                             })
                                         }
+                                        parentCallBack = {this.childDataFun}
                                     />
                                 </Tab>
                                 <Tab eventKey="Completed" title="Completed">
                                     <Completed completeData = {
-                                        this.state.todoData.filter((item)=>{
-                                            return item.status === 'completed';
-                                        })
-                                    }/>
+                                            this.state.todoData.filter((item)=>{
+                                                return item.status === 'completed';
+                                            })
+                                        }
+                                        parentCallBack = {this.childDataFun}
+                                    />
                                 </Tab>
                             </Tabs>
                         </Col>
