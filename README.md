@@ -34,7 +34,7 @@ Currently under development, once done it will be available in `Keynote, PDF and
 - React App
 
 `docker build -t todo:dev .` for building the image.<br/>
-`docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3000:3000 todo:dev` for runnig the container.<br/>
+`docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3000:3000 todo:dev` for running the container.<br/>
 Use `Dockerfile.prod` for production.
 
 - Nodejs Backend

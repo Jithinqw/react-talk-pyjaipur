@@ -49,7 +49,6 @@ export default class Pending extends React.Component {
 
     render() {
         const todo = this.props.pendingData;
-        console.log(todo);
         return(
             <div className="pending">
                 <ListGroup>
