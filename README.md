@@ -41,3 +41,7 @@ Use `Dockerfile.prod` for production.
 
 `docker build -t todobackend/dev .` for building the image.<br/>
 `docker run -p 4000:4000 -d todobackend/dev` for running the image.
+
+## Shot
+
+![Image](https://github.com/Jithinqw/react-talk-pyjaipur/blob/master/Screenshot.png)
