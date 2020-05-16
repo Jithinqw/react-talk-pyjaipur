@@ -24,7 +24,6 @@ export default class Completed extends React.Component {
         }).catch(error=> {
             console.log(error);
         })
-        console.log("sdfd");
     }
     
     deleteTodo = (todoId) =>{
