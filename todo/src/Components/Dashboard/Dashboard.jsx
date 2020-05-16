@@ -13,7 +13,8 @@ export default class Dashboard extends React.Component {
             todoData: [],
             newTodo: '',
             todo: '',
-            error: ''
+            error: '',
+            showModal: false
         }
     }
 
@@ -32,17 +33,21 @@ export default class Dashboard extends React.Component {
         }).then(res=> {
             if(res.status === 200) {
                 res.json().then(res=>{
-                    console.log(res)
                     this.setState({todoData: res});
                 })
-                console.log(this.state.todoData)
             } if(res.status === 204) {
                 this.setState({error: 'No todo found'});
             } else {
-                this.setState({error: res.statusText});
+                this.setState({
+                    error: res.statusText,
+                    showModal: true
+                });
             }
         }).catch(err=>{
-            this.setState({error: err});
+            this.setState({
+                error: err,
+                showModal: true
+            });
         })
     }
 
@@ -69,7 +74,10 @@ export default class Dashboard extends React.Component {
                 })
             }
         }).catch(error=> {
-            this.setState({error: error});
+            this.setState({
+                error: error,
+                showModal: true
+            });
         })
     }
 

@@ -25,7 +25,6 @@ export default class Pending extends React.Component {
         }).catch(error=> {
             console.log(error);
         })
-        console.log("sdfd");
     }
     
     deleteTodo = (todoId) =>{
@@ -38,7 +37,7 @@ export default class Pending extends React.Component {
         }).then(res=> {
             if(res.status === 200) {
                 res.json().then(res=> {
-                    console.log(res)
+                    this.props.parentCallBack(todoId);
                 })
             } else {
                 console.log(res);
@@ -50,7 +49,6 @@ export default class Pending extends React.Component {
 
     render() {
         const todo = this.props.pendingData;
-        console.log(todo);
         return(
             <div className="pending">
                 <ListGroup>
