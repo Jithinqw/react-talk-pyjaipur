@@ -4,8 +4,7 @@ Talk about React fundamentals.
 
 ## Slides
 
-Slides are available in `slides` folder.
-Currently under development, once done it will be available in `Keynote, PDF and PPT` format. 
+Slides are available in `slides` folder, available in `Keynote, PDF and PPT` formats. 
 
 ## Running
 
@@ -42,6 +41,6 @@ Use `Dockerfile.prod` for production.
 `docker build -t todobackend/dev .` for building the image.<br/>
 `docker run -p 4000:4000 -d todobackend/dev` for running the image.
 
-## Shot
+## Mug Shot
 
 ![Image](https://github.com/Jithinqw/react-talk-pyjaipur/blob/master/Screenshot.png)
