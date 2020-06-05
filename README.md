@@ -40,6 +40,7 @@ Use `Dockerfile.prod` for production.
 
 `docker build -t todobackend/dev .` for building the image.<br/>
 `docker run -p 4000:4000 -d todobackend/dev` for running the image.
+Please use a MongoDB image to store all the data from the Nodejs backend.
 
 ## Mug Shot
 
