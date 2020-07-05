@@ -24,7 +24,7 @@ export default class Header extends React.Component {
 
     renderRegister() {
         if(history.location.pathname === "/register") {
-            return <Nav.Link href="/login">Login</Nav.Link>
+            return <Nav.Link href="/login" className="loginBtn">Login</Nav.Link>
         } else {
             return null;
         }
@@ -32,7 +32,7 @@ export default class Header extends React.Component {
 
     renderLogin() {
         if(history.location.pathname === "/login") {
-            return <Nav.Link href="/register">Register</Nav.Link>
+            return <Nav.Link href="/register" className="registerBtn">Register</Nav.Link>
         } else {
             return null;
         }

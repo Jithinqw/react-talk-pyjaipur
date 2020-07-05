@@ -11,5 +11,6 @@ describe('Unit Test for the Header', ()=> {
     it('Check if Header is rendering', ()=>{
        const HeaderMount = mount(<Header />);
        expect(HeaderMount.find(<Navbar.Brand href="/dashboard">The Todo App</Navbar.Brand>).contains('The Todo App'));
+       expect(HeaderMount.find('.loginBtn').contains().valueOf('Login'));
     })
 })
