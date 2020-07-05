@@ -11,14 +11,6 @@ var userModel = require('../../Models/userModel'),
  * @desc Userlogin for existing users
  */
 exports.userLogin = (req, res) => {
-    if (!req.body.email || !req.body.password) {
-        res.status(422).json('Invalid email or password')
-    } else if (
-        validator.isEmailValid(req.body.email) &&
-        passwordValidator.isPasswordValid(req.body.password) !== true
-    ) {
-        res.status(422).json('Invalid email or password');
-    } else {
         userModel.findOne({ email: req.body.email }, (err, user) => {
             if (err) {
                 res.status(400).json(err);
@@ -44,5 +36,4 @@ exports.userLogin = (req, res) => {
                 }
             }
         })
-    }
 }

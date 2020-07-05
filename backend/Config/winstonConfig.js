@@ -7,7 +7,7 @@ var winston = require("winston");
 var options = {
     file: {
       level: "info",
-      filename: `${appRoot}/logs/sicarii.log`,
+      filename: `${appRoot}/logs/pyjaipurtalk.log`,
       handleExceptions: true,
       json: true,
       maxsize: 52428800, // 50MB

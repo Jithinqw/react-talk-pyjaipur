@@ -5,9 +5,6 @@
 const todoModel = require('../../Models/todoModel');
 
 exports.updateTodoStatus = (req, res) => {
-    if(!req.body.todoId || !req.body.status) {
-        res.status(422).json('TodoId  and status is required. Please provide a todo Id');
-    } else {
         todoModel.find({todoId: req.body.todoId}, (error, todo)=> {
             if(error) {
                 res.status(400).json(error);
@@ -24,4 +21,3 @@ exports.updateTodoStatus = (req, res) => {
             }
         })
     }
-}

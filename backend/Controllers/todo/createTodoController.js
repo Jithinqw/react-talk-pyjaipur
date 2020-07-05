@@ -11,9 +11,6 @@ var todoModel = require('../../Models/todoModel'),
  * @description Creates a new todo.
  */
 exports.createTodo = async (req, res)=>{
-    if(!req.body.todoTitle){
-        res.status(422).json('Invalid number of parameters');
-    }else{
         const userPayload = await JWTCertifier.getTokenPayload(req);
         if(userPayload){
             todoModel.create({
@@ -32,4 +29,3 @@ exports.createTodo = async (req, res)=>{
             res.status(401).json('Invalid token provided. Please use a valid token.');
         }
     }
-}

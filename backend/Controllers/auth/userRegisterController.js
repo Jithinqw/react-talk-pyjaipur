@@ -8,14 +8,6 @@ const userModel = require('../../Models/userModel'),
  * @desc Users register contoller for new users.
  */
 exports.userRegister = (req, res) => {
-    if (!req.body.firstName || !req.body.lastName|| !req.body.email || !req.body.password) {
-        res.status(422).json('Invalid number of parameters passed. Please send all the required paramters.');
-    } else if (
-        validator.isEmailValid(req.body.email) &&
-        passwordValidator.isPasswordValid(req.body.password) === false
-    ) {
-        res.status(422).json('Invalid email or password');
-    } else {
         userModel.find({ email: req.body.email }, (err, users) => {
             if (err) {
                 res.status(400).json(err);
@@ -49,5 +41,4 @@ exports.userRegister = (req, res) => {
                 }
             }
         })
-    }
 }
