@@ -1,4 +1,4 @@
-# react-talk-pyjaipur
+# React talk Py-Jaipur
 
 Talk about React fundamentals.
 
@@ -15,6 +15,8 @@ Slides are available in `slides` folder, available in `Keynote, PDF and PPT` for
 - All the configurations are written in `/Config` folder.
 - Please install dependencies using `npm install or npm i`.
 - Start your node server using `npm start or node server.js` on the root of the project.
+
+- API tests are written in `mocha and chai`. You could run these tests by `npm test`
 
 ### React App
 
